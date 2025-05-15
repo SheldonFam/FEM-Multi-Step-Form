@@ -1,9 +1,5 @@
 import MultiStepForm from "./component/MultiStepForm";
 
 export default function Home() {
-  return (
-    <div>
-      <MultiStepForm />
-    </div>
-  );
+  return <MultiStepForm />;
 }

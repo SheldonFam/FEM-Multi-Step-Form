@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ThankYou() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center  bg-gray-100">
       <div className="mb-4">
         <Image
           src={"/images/icon-thank-you.svg"}

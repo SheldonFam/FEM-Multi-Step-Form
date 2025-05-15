@@ -13,7 +13,7 @@ export default function Step4({ back, formData, confirm }: Props) {
   const total = planCost + addonsCost;
 
   return (
-    <div>
+    <div className="w-full">
       <h2 className="text-xl font-bold mb-2">Summary</h2>
       <p className="text-sm text-gray-500 mb-4">
         Double-check everything looks OK before confirming.

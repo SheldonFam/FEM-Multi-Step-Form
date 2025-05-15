@@ -35,7 +35,7 @@ export default function StepThree({ next, back, formData, updateForm }: Props) {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <h2 className="text-xl font-bold mb-2">Pick add-ons</h2>
       <p className="text-sm text-gray-500 mb-4">
         Add-ons help enhance your experience.

@@ -13,19 +13,19 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Blue 950: hsl(213, 96%, 18%)
-- Purple 600: hsl(243, 100%, 62%)
-- Blue 300: hsl(228, 100%, 84%)
-- Blue 200: hsl(206, 94%, 87%)
-- Red 500: hsl(354, 84%, 57%)
+- Blue 950: hsl(213, 96%, 18%) #051B33
+- Purple 600: hsl(243, 100%, 62%) #5C3DFF
+- Blue 300: hsl(228, 100%, 84%) #A6C2FF
+- Blue 200: hsl(206, 94%, 87%) #C2E4FF
+- Red 500: hsl(354, 84%, 57%) #E83F4E
 
 ### Neutral
 
-- Grey 500: hsl(231, 11%, 63%)
-- Purple 200: hsl(229, 24%, 87%)
-- Blue 100: hsl(218, 100%, 97%)
-- Blue 50: hsl(231, 100%, 99%)
-- White: hsl(0, 100%, 100%)
+- Grey 500: hsl(231, 11%, 63%) #9CA2B0
+- Purple 200: hsl(229, 24%, 87%) #DBDFED
+- Blue 100: hsl(218, 100%, 97%) #EBF5FF
+- Blue 50: hsl(231, 100%, 99%) #F8FBFF
+- White: hsl(0, 100%, 100%) #FFFFFF
 
 ## Typography
 

@@ -11,9 +11,9 @@ interface Props {
 
 export default function StepOne({ next, formData, updateForm }: Props) {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-2">Personal info</h2>
-      <p className="text-sm text-gray-500 mb-4">
+    <div className="w-full">
+      <h2 className="text-xl font-bold mb-2 text-[#051B33]">Personal info</h2>
+      <p className="text-sm text-[#9CA2B0] mb-4">
         Please provide your name, email address, and phone number.
       </p>
       <Formik
@@ -76,12 +76,14 @@ export default function StepOne({ next, formData, updateForm }: Props) {
               className="text-red-500 text-sm"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded"
-          >
-            Next Step
-          </button>
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              className="bg-[#051B33] text-white px-4 py-2 rounded"
+            >
+              Next Step
+            </button>
+          </div>
         </Form>
       </Formik>
     </div>

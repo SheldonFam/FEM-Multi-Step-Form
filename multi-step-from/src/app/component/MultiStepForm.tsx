@@ -48,9 +48,9 @@ export default function MultiStepForm() {
   };
 
   useEffect(() => {
-    const savedForm = localStorage.getItem("formData");
-    const savedStep = localStorage.getItem("currentStep");
-    const savedSubmitted = localStorage.getItem("submitted");
+    const savedForm = sessionStorage.getItem("formData");
+    const savedStep = sessionStorage.getItem("currentStep");
+    const savedSubmitted = sessionStorage.getItem("submitted");
     if (savedForm) {
       setFormData(JSON.parse(savedForm));
     }
@@ -63,47 +63,54 @@ export default function MultiStepForm() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("formData", JSON.stringify(formData));
-    localStorage.setItem("currentStep", step.toString());
-    localStorage.setItem("submitted", submitted.toString());
+    sessionStorage.setItem("formData", JSON.stringify(formData));
+    sessionStorage.setItem("currentStep", step.toString());
+    sessionStorage.setItem("submitted", submitted.toString());
   }, [formData, step, submitted]);
 
   return (
-    <div className="max-w-xl mx-auto p-4 bg-white rounded-lg shadow-lg flex gap-2">
-      <div className="relative">
-        <Image
-          src="/images/bg-sidebar-desktop.svg"
-          alt="sidebar background"
-          width={300}
-          height={100}
-        />
-        <div className="absolute top-0 left-0 p-3">
-          <Stepper currentStep={step} />
+    <div className="min-h-screen flex items-center justify-center bg-[#f0f6ff]">
+      <div className="flex bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-4xl p-4 min-h-[600px]">
+        <div className="relative bg-transparent min-w-[274px] flex flex-col justify-between">
+          <div className="absolute">
+            <Image
+              src="/images/bg-sidebar-desktop.svg"
+              alt="sidebar background"
+              width={100}
+              height={100}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="relative p-8 h-full">
+            <Stepper currentStep={step} />
+          </div>
+        </div>
+        <div className="flex-1 flex justify-center p-4">
+          {!submitted && step === 1 && (
+            <StepOne next={next} formData={formData} updateForm={updateForm} />
+          )}
+          {!submitted && step === 2 && (
+            <StepTwo
+              next={next}
+              back={back}
+              formData={formData}
+              updateForm={updateForm}
+            />
+          )}
+          {!submitted && step === 3 && (
+            <StepThree
+              next={next}
+              back={back}
+              formData={formData}
+              updateForm={updateForm}
+            />
+          )}
+          {!submitted && step === 4 && (
+            <StepFour back={back} formData={formData} confirm={confirm} />
+          )}
+          {submitted && <ThankYou />}
         </div>
       </div>
-      {!submitted && step === 1 && (
-        <StepOne next={next} formData={formData} updateForm={updateForm} />
-      )}
-      {!submitted && step === 2 && (
-        <StepTwo
-          next={next}
-          back={back}
-          formData={formData}
-          updateForm={updateForm}
-        />
-      )}
-      {!submitted && step === 3 && (
-        <StepThree
-          next={next}
-          back={back}
-          formData={formData}
-          updateForm={updateForm}
-        />
-      )}
-      {!submitted && step === 4 && (
-        <StepFour back={back} formData={formData} confirm={confirm} />
-      )}
-      {submitted && <ThankYou />}
     </div>
   );
 }
