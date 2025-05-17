@@ -7,7 +7,7 @@ interface Props {
   updateForm: (data: Partial<FormData>) => void;
 }
 
-const plans = [
+export const plans = [
   {
     name: "Arcade",
     price: { monthly: 9, yearly: 90 },

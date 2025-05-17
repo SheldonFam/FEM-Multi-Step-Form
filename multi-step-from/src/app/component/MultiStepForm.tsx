@@ -10,6 +10,9 @@ import StepFour from "./StepFour";
 import ThankYou from "./ThankYou";
 import Stepper from "./Stepper";
 import Image from "next/image";
+import { plans } from "./StepTwo"; // or wherever you move it to
+
+export type Plan = (typeof plans)[number]["name"];
 
 export type BillingType = "monthly" | "yearly";
 
@@ -17,7 +20,7 @@ export interface FormData {
   name: string;
   email: string;
   phone: string;
-  plan: "Arcade" | "Advanced" | "Pro";
+  plan: Plan;
   billing: BillingType;
   addons: string[];
 }
@@ -70,9 +73,9 @@ export default function MultiStepForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f0f6ff]">
-      <div className="flex bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-4xl p-4 min-h-[600px]">
+      <div className="flex bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-[942px] p-4 min-h-[600px]">
         <div className="relative bg-transparent min-w-[274px] flex flex-col justify-between">
-          <div className="absolute">
+          <div className="absolute h-full">
             <Image
               src="/images/bg-sidebar-desktop.svg"
               alt="sidebar background"
@@ -85,7 +88,7 @@ export default function MultiStepForm() {
             <Stepper currentStep={step} />
           </div>
         </div>
-        <div className="flex-1 flex justify-center p-4">
+        <div className="mx-auto">
           {!submitted && step === 1 && (
             <StepOne next={next} formData={formData} updateForm={updateForm} />
           )}
