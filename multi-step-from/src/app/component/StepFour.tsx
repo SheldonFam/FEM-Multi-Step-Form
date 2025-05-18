@@ -13,12 +13,13 @@ export default function Step4({ back, formData, confirm }: Props) {
   const total = planCost + addonsCost;
 
   return (
-    <div className="w-full">
-      <h2 className="text-xl font-bold mb-2">Summary</h2>
-      <p className="text-sm text-gray-500 mb-4">
-        Double-check everything looks OK before confirming.
-      </p>
-
+    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px] mx-auto">
+      <div className="flex flex-col gap-4">
+        <h2 className="text-2xl font-bold text-[#051B33]">Summary</h2>
+        <p className="text-base text-[#9CA2B0]">
+          Double-check everything looks OK before confirming.
+        </p>
+      </div>
       <div className="border rounded p-4 space-y-4">
         <div className="flex justify-between items-center">
           <div>
@@ -52,18 +53,18 @@ export default function Step4({ back, formData, confirm }: Props) {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-6">
+      <div className="flex justify-between mt-auto">
         <button
           type="button"
           onClick={back}
-          className="text-gray-600 hover:text-gray-800"
+          className="text-gray-600 hover:text-gray-800 cursor-pointer"
         >
           Go Back
         </button>
         <button
-          type="button"
           onClick={confirm}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          type="submit"
+          className="bg-[#051B33] text-white p-4 rounded-xl max-w-[122px] w-full cursor-pointer hover:bg-[#0A2A4D] transition duration-300"
         >
           Confirm
         </button>

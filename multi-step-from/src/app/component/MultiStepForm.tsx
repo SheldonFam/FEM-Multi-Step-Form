@@ -75,7 +75,7 @@ export default function MultiStepForm() {
     <div className="min-h-screen flex items-center justify-center bg-[#f0f6ff]">
       <div className="flex bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-[942px] p-4 min-h-[600px]">
         <div className="relative bg-transparent min-w-[274px] flex flex-col justify-between">
-          <div className="absolute h-full">
+          <div className="absolute">
             <Image
               src="/images/bg-sidebar-desktop.svg"
               alt="sidebar background"
@@ -84,11 +84,11 @@ export default function MultiStepForm() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="relative p-8 h-full">
+          <div className="relative p-8 ">
             <Stepper currentStep={step} />
           </div>
         </div>
-        <div className="mx-auto">
+        <div className="flex flex-1 w-full">
           {!submitted && step === 1 && (
             <StepOne next={next} formData={formData} updateForm={updateForm} />
           )}

@@ -35,13 +35,15 @@ export default function StepThree({ next, back, formData, updateForm }: Props) {
   };
 
   return (
-    <div className="w-full">
-      <h2 className="text-xl font-bold mb-2">Pick add-ons</h2>
-      <p className="text-sm text-gray-500 mb-4">
-        Add-ons help enhance your experience.
-      </p>
+    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px] mx-auto">
+      <div className="flex flex-col gap-4">
+        <h2 className="text-xl font-bold">Pick add-ons</h2>
+        <p className="text-sm text-gray-500">
+          Add-ons help enhance your experience.
+        </p>
+      </div>
 
-      <div className="space-y-4">
+      <div className="flex flex-col gap-8">
         {availableAddons.map((addon) => (
           <label
             key={addon.id}
@@ -65,18 +67,18 @@ export default function StepThree({ next, back, formData, updateForm }: Props) {
         ))}
       </div>
 
-      <div className="flex justify-between mt-6">
+      <div className="flex justify-between mt-auto">
         <button
           type="button"
           onClick={back}
-          className="text-gray-600 hover:text-gray-800"
+          className="text-gray-600 hover:text-gray-800 cursor-pointer"
         >
           Go Back
         </button>
         <button
-          type="button"
           onClick={next}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          type="submit"
+          className="bg-[#051B33] text-white p-4 rounded-xl max-w-[122px] w-full cursor-pointer hover:bg-[#0A2A4D] transition duration-300"
         >
           Next Step
         </button>

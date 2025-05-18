@@ -11,7 +11,7 @@ interface Props {
 
 export default function StepOne({ next, formData, updateForm }: Props) {
   return (
-    <div className="w-full flex flex-col gap-12">
+    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px] mx-auto">
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold text-[#051B33]">Personal info</h2>
         <p className="text-base text-[#9CA2B0]">
@@ -39,53 +39,59 @@ export default function StepOne({ next, formData, updateForm }: Props) {
           next();
         }}
       >
-        <Form className="w-full flex flex-col gap-7">
-          <div>
-            <div className="flex justify-between items-center mb-1">
-              <label className="text-sm font-medium">Name</label>
-              <ErrorMessage
+        <Form className="flex flex-col flex-1">
+          {/* wrap form */}
+          <div className="flex flex-col gap-7">
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <label className="text-sm font-medium">Name</label>
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <Field
                 name="name"
-                component="div"
-                className="text-red-500 text-sm"
+                type="text"
+                className="w-full border px-3 py-2 rounded"
               />
             </div>
-            <Field
-              name="name"
-              type="text"
-              className="w-full border px-3 py-2 rounded"
-            />
-          </div>
-          <div>
-            <div className="flex justify-between items-center mb-1">
-              <label className="text-sm font-medium">Email Address</label>
-              <ErrorMessage
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <label className="text-sm font-medium">Email Address</label>
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <Field
                 name="email"
-                component="div"
-                className="text-red-500 text-sm"
+                type="email"
+                className="w-full border px-3 py-2 rounded"
               />
             </div>
-            <Field
-              name="email"
-              type="email"
-              className="w-full border px-3 py-2 rounded"
-            />
-          </div>
-          <div>
-            <div className="flex justify-between items-center mb-1">
-              <label className="block text-sm font-medium">Phone Number</label>
-              <ErrorMessage
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <label className="block text-sm font-medium">
+                  Phone Number
+                </label>
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <Field
                 name="phone"
-                component="div"
-                className="text-red-500 text-sm"
+                type="text"
+                className="w-full border px-3 py-2 rounded"
               />
             </div>
-            <Field
-              name="phone"
-              type="text"
-              className="w-full border px-3 py-2 rounded"
-            />
           </div>
-          <div className="flex justify-end pt-14">
+
+          <div className="flex justify-end mt-auto">
             <button
               type="submit"
               className="bg-[#051B33] text-white p-4 rounded-xl max-w-[122px] w-full cursor-pointer hover:bg-[#0A2A4D] transition duration-300"
