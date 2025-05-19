@@ -2,20 +2,23 @@ import Image from "next/image";
 
 export default function ThankYou() {
   return (
-    <div className="flex flex-col items-center justify-center  bg-gray-100">
-      <div className="mb-4">
+    <div className="flex flex-col gap-10 max-w-[449px] mx-auto justify-center items-center">
+      <div>
         <Image
           src={"/images/icon-thank-you.svg"}
           alt="thank you"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
         />
       </div>
-      <h1 className="text-3xl font-bold mb-4">Thank You!</h1>
-      <p className="text-lg">
-        Thanks for confirming your subscription. We hope you have fun using our
-        platform. If you ever need support, feel free to reach out to us.
-      </p>
+      <div className="flex flex-col gap-6 justify-center items-center">
+        <h1 className="text-2xl font-bold text-[#051B33]">Thank you!</h1>
+        <p className="text-base text-[#9CA2B0] text-center">
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support @loremgaming.com to us.
+        </p>
+      </div>
     </div>
   );
 }

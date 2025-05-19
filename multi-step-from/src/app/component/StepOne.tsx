@@ -11,7 +11,7 @@ interface Props {
 
 export default function StepOne({ next, formData, updateForm }: Props) {
   return (
-    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px] mx-auto">
+    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px]">
       <div className="flex flex-col gap-6">
         <h2 className="text-2xl font-bold text-[#051B33]">Personal info</h2>
         <p className="text-base text-[#9CA2B0]">

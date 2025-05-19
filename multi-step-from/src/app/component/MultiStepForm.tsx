@@ -88,7 +88,7 @@ export default function MultiStepForm() {
             <Stepper currentStep={step} />
           </div>
         </div>
-        <div className="flex flex-1 w-full">
+        <div className="flex w-full justify-center">
           {!submitted && step === 1 && (
             <StepOne next={next} formData={formData} updateForm={updateForm} />
           )}

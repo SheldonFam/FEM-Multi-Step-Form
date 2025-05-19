@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FormData } from "./MultiStepForm";
 
 interface Props {
@@ -33,7 +34,7 @@ export default function StepTwo({ next, back, formData, updateForm }: Props) {
   };
 
   return (
-    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px] mx-auto">
+    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px]">
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold text-[#051B33]">Select your plan</h2>
         <p className="text-based text-gray-500">
@@ -52,23 +53,24 @@ export default function StepTwo({ next, back, formData, updateForm }: Props) {
             return (
               <div
                 key={plan.name}
-                className={`border rounded p-4 cursor-pointer ${
-                  selected ? "border-blue-600 bg-blue-50" : "border-gray-300"
+                className={`border rounded p-4 cursor-pointer flex flex-col gap-12 ${
+                  selected
+                    ? "border-[#5C3DFF] bg-[#F8FBFF]"
+                    : "border-[#9CA2B0]"
                 }`}
                 onClick={() => updateForm({ plan: plan.name })}
               >
-                <img
-                  src={plan.icon}
-                  alt={plan.name}
-                  className="mb-4 w-10 h-10"
-                />
-                <div className="font-bold text-sm">{plan.name}</div>
-                <div className="text-sm text-gray-600">
-                  ${price}/{formData.billing === "monthly" ? "mo" : "yr"}
+                <Image src={plan.icon} alt={plan.name} width={40} height={40} />
+
+                <div className="flex flex-col gap-1">
+                  <p className="font-bold text-sm">{plan.name}</p>
+                  <p className="text-sm text-gray-600">
+                    ${price}/{formData.billing === "monthly" ? "mo" : "yr"}
+                  </p>
+                  {freeText && (
+                    <p className="text-xs text-[#051B33]">{freeText}</p>
+                  )}
                 </div>
-                {freeText && (
-                  <div className="text-xs text-blue-600 mt-1">{freeText}</div>
-                )}
               </div>
             );
           })}
@@ -84,13 +86,15 @@ export default function StepTwo({ next, back, formData, updateForm }: Props) {
           </span>
           <button
             type="button"
-            className="relative w-12 h-6 bg-blue-600 rounded-full"
+            className="relative w-12 h-6 bg-[#051B33] rounded-full cursor-pointer"
             onClick={toggleBilling}
           >
             <div
-              className={`absolute top-0.5 ${
-                formData.billing === "monthly" ? "left-1" : "left-6"
-              } w-4 h-4 bg-white rounded-full transition-all`}
+              className={`w-4 h-4 bg-white rounded-full transition-transform duration-300 absolute top-1 left-1 ${
+                formData.billing === "monthly"
+                  ? "translate-x-0"
+                  : "translate-x-6"
+              }`}
             />
           </button>
           <span
