@@ -66,9 +66,11 @@ export default function Step4({ back, formData, confirm }: Props) {
         )}
       </div>
 
-      <div className="flex flex-row justify-between text-sm text-gray-600">
-        <p>Total (per {formData.billing === "yearly" ? "year" : "month"})</p>
-        <p className="text-black font-bold">
+      <div className="flex flex-row justify-between text-sm px-4">
+        <p className="text-[#9CA2B0]">
+          Total (per {formData.billing === "yearly" ? "year" : "month"})
+        </p>
+        <p className="text-[#5C3DFF] font-bold">
           ${total}/{formData.billing === "yearly" ? "yr" : "mo"}
         </p>
       </div>

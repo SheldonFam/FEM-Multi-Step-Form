@@ -73,22 +73,37 @@ export default function MultiStepForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f0f6ff]">
-      <div className="flex bg-white rounded-2xl shadow-2xl overflow-hidden w-full max-w-[942px] p-4 min-h-[600px]">
-        <div className="relative bg-transparent min-w-[274px] flex flex-col justify-between">
+      <div className="flex bg-white md:rounded-2xl shadow-2xl overflow-hidden w-full max-w-[942px] md:p-4 min-h-[600px] flex-col md:flex-row">
+        {/* Mobile top banner */}
+        <div className="block md:hidden w-full relative">
+          <Image
+            src="/images/bg-sidebar-mobile.svg"
+            alt="sidebar background"
+            width={500}
+            height={172}
+            className="w-full h-[172px] object-cover"
+          />
+          <div className="absolute top-[-32px] left-0 w-full h-full flex items-center justify-center md:pt-6">
+            <Stepper currentStep={step} />
+          </div>
+        </div>
+        {/* Desktop sidebar */}
+        <div className="hidden md:relative md:bg-transparent md:min-w-[274px] md:flex md:flex-col md:justify-between">
           <div className="absolute">
             <Image
               src="/images/bg-sidebar-desktop.svg"
               alt="sidebar background"
               width={100}
               height={100}
-              className="h-full w-full object-cover"
+              className="hidden md:block h-full w-full object-cover"
             />
           </div>
           <div className="relative p-8 ">
             <Stepper currentStep={step} />
           </div>
         </div>
-        <div className="flex w-full justify-center">
+        {/* Form container */}
+        <div className="flex w-full justify-center -mt-16 md:mt-0 z-10">
           {!submitted && step === 1 && (
             <StepOne next={next} formData={formData} updateForm={updateForm} />
           )}

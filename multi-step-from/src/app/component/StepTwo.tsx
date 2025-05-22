@@ -37,7 +37,7 @@ export default function StepTwo({ next, back, formData, updateForm }: Props) {
     <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px]">
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold text-[#051B33]">Select your plan</h2>
-        <p className="text-based text-gray-500">
+        <p className="text-base text-gray-500">
           You have the option of monthly or yearly billing.
         </p>
       </div>

@@ -11,10 +11,12 @@ interface Props {
 
 export default function StepOne({ next, formData, updateForm }: Props) {
   return (
-    <div className="w-full flex flex-col gap-12 mt-12 max-w-[449px]">
+    <div className="w-full flex flex-col gap-12 mt-[-10px] md:mt-12 md:max-w-[449px] max-w-[342px] bg-white rounded-xl shadow-lg p-6 md:bg-transparent md:rounded-none md:shadow-none md:p-0">
       <div className="flex flex-col gap-6">
-        <h2 className="text-2xl font-bold text-[#051B33]">Personal info</h2>
-        <p className="text-base text-[#9CA2B0]">
+        <h2 className="text-2xl font-bold text-[#051B33] form-title">
+          Personal info
+        </h2>
+        <p className="text-base text-[#9CA2B0] form-desc">
           Please provide your name, email address, and phone number.
         </p>
       </div>
@@ -54,7 +56,7 @@ export default function StepOne({ next, formData, updateForm }: Props) {
               <Field
                 name="name"
                 type="text"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full border px-3 py-2 rounded form-input"
               />
             </div>
             <div>
@@ -69,7 +71,7 @@ export default function StepOne({ next, formData, updateForm }: Props) {
               <Field
                 name="email"
                 type="email"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full border px-3 py-2 rounded form-input"
               />
             </div>
             <div>
@@ -86,12 +88,12 @@ export default function StepOne({ next, formData, updateForm }: Props) {
               <Field
                 name="phone"
                 type="text"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full border px-3 py-2 rounded form-input"
               />
             </div>
           </div>
 
-          <div className="flex justify-end mt-auto">
+          <div className="hidden md:flex justify-end mt-auto">
             <button
               type="submit"
               className="bg-[#051B33] text-white p-4 rounded-xl max-w-[122px] w-full cursor-pointer hover:bg-[#0A2A4D] transition duration-300"
